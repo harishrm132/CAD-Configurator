@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="CAD_Configurator.Views.PipeAngleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CAD_Configurator.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--#region Main Commands -->
+        <Image Grid.Row="0" Grid.Column="0" Source="/Resources/Component/AnglePipe.png" Width="600" Height="600" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5 0 5 0" />
+
+        <Button x:Name="Create3DModel"
+                Grid.Column="0" Grid.Row="0" 
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Right"
+                FontWeight="Bold"
+                FontSize="16"
+                MinWidth="100" MinHeight="40" 
+                Margin="5 0 15 20">Create</Button>
+        <!--#endregion-->
+
+        <!--#region InputBoxes -->
+        <TextBox x:Name="H1" Style="{StaticResource VerticalBox}" Margin="58,225,501.6,350" />
+        <TextBox x:Name="D1" Style="{StaticResource VerticalBox}" Margin="539,150,20.6,425" />
+        <TextBox x:Name="D2" Style="{StaticResource VerticalBox}" Margin="422,150,137.6,425" />
+        <TextBox x:Name="T1" Style="{StaticResource VerticalBox}" Margin="540,377,19.6,198" />
+        <TextBox x:Name="X2" Style="{StaticResource VerticalBox}" Margin="303,538,256.6,37" />
+        <TextBox x:Name="X1" Style="{StaticResource HorzBox}" Margin="180,565,379.6,10" />
+        <TextBox x:Name="R2" Style="{StaticResource HorzBox}" Margin="94,565,465.6,10" />
+        <TextBox x:Name="D3" Style="{StaticResource HorzBox}" Margin="139,492,420.6,83" />
+        <TextBox x:Name="W" Style="{StaticResource HorzBox}" Margin="165,371,394.6,204" />
+        <TextBox x:Name="L1" Style="{StaticResource HorzBox}" Margin="458,371,101.6,204" />
+        <TextBox x:Name="R3" Style="{StaticResource HorzBox}" Margin="486,260,73.6,315" />
+        <TextBox x:Name="X3" Style="{StaticResource HorzBox}" Margin="458,73,101.6,502" />
+        <TextBox x:Name="L2" Style="{StaticResource HorzBox}" Margin="382,51,177.6,524" />
+        <TextBox x:Name="R1" Style="{StaticResource HorzBox}" Margin="306,73,253.6,502" />
+        <!--#endregion-->
+        
+    </Grid>
+</UserControl>
