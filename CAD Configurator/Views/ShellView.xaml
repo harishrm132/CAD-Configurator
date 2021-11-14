@@ -31,7 +31,7 @@
             <Run Text=" CONFIGURATOR" Foreground="{StaticResource ForegroundVeryDarkBrush}" />
         </TextBlock>
 
-        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1"  Grid.RowSpan="2" CanVerticallyScroll="True">
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" CanVerticallyScroll="True">
             <Button Style="{StaticResource MenuButtonStyle}" x:Name="ShowTools" Padding="0 5">
                 Angle Pipe
             </Button>
