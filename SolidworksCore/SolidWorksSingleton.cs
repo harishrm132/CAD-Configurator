@@ -16,7 +16,7 @@ namespace SolidworksCore
 
         }
 
-        internal static SldWorks GetApplication()
+        public static SldWorks GetApplication()
         {
             if (swApp == null)
             {

@@ -1,4 +1,6 @@
-﻿using Caliburn.Micro;
+﻿using AnglePipeCAD;
+using AnglePipeCAD.Models;
+using Caliburn.Micro;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,20 +12,20 @@ namespace CAD_Configurator.ViewModels
     public class PipeAngleViewModel : Screen
     {
         #region Private Members
-        private double _h1;
-        private double _w;
-        private double _l1;
-        private double _l2;
-        private double _t1;
-        private double _r1;
-        private double _r2;
-        private double _r3;
-        private double _x1;
-        private double _x2;
-        private double _x3;
-        private double _d1;
-        private double _d2;
-        private double _d3;
+        private double _h1 = 150;
+        private double _w = 125;
+        private double _l1 = 100;
+        private double _l2 = 50;
+        private double _t1 = 8;
+        private double _r1 = 15;
+        private double _r2 = 20;
+        private double _r3 = 10;
+        private double _x1 = 25;
+        private double _x2 = 25;
+        private double _x3 = 20;
+        private double _d1 = 50;
+        private double _d2 = 40;
+        private double _d3 = 15;
 
         #endregion
 
@@ -197,6 +199,8 @@ namespace CAD_Configurator.ViewModels
 
         #endregion
 
+        public double H2 { get { return D1; } }
+
         public bool CanCreate3DModel
         {
             get
@@ -211,7 +215,13 @@ namespace CAD_Configurator.ViewModels
 
         public void Create3DModel()
         {
-            T1 = 20;
+            string targetFolder = @"D:\Works\CAD\Solidworks\4 - AnglePipe";
+
+            AnglePart angle = new AnglePart(targetFolder, L1, H1 + H2, W, T1, D3 / 2, (D1 + 1) / 2, R1, R2, X1, X2);
+            PipePart pipe = new PipePart(targetFolder, D2, D1, L2);
+            AnglePipeAssy anglePipeAssy = new AnglePipeAssy(angle, pipe, X3);
+
+            Initializr.CreateAnglePipe(angle, pipe, anglePipeAssy, CADTools.Solidworks);
         }
 
     }

@@ -143,5 +143,15 @@
   <ItemGroup>
     <Resource Include="Resources\Component\AnglePipe.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnglePipeCAD\AnglePipeCAD.csproj">
+      <Project>{33ed0840-ed9d-49b6-ad15-d594b6c8af39}</Project>
+      <Name>AnglePipeCAD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SolidworksCore\SolidworksCore.csproj">
+      <Project>{ad5a9188-6630-49c4-8d56-1101aa825f5a}</Project>
+      <Name>SolidworksCore</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

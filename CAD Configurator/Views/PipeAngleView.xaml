@@ -32,20 +32,20 @@
         <!--#endregion-->
 
         <!--#region InputBoxes -->
-        <TextBox x:Name="H1" Style="{StaticResource VerticalBox}" Margin="58,225,501.6,350" />
-        <TextBox x:Name="D1" Style="{StaticResource VerticalBox}" Margin="539,150,20.6,425" />
-        <TextBox x:Name="D2" Style="{StaticResource VerticalBox}" Margin="422,150,137.6,425" />
-        <TextBox x:Name="T1" Style="{StaticResource VerticalBox}" Margin="540,377,19.6,198" />
-        <TextBox x:Name="X2" Style="{StaticResource VerticalBox}" Margin="303,538,256.6,37" />
-        <TextBox x:Name="X1" Style="{StaticResource HorzBox}" Margin="180,565,379.6,10" />
-        <TextBox x:Name="R2" Style="{StaticResource HorzBox}" Margin="94,565,465.6,10" />
-        <TextBox x:Name="D3" Style="{StaticResource HorzBox}" Margin="139,492,420.6,83" />
-        <TextBox x:Name="W" Style="{StaticResource HorzBox}" Margin="165,371,394.6,204" />
-        <TextBox x:Name="L1" Style="{StaticResource HorzBox}" Margin="458,371,101.6,204" />
-        <TextBox x:Name="R3" Style="{StaticResource HorzBox}" Margin="486,260,73.6,315" />
-        <TextBox x:Name="X3" Style="{StaticResource HorzBox}" Margin="458,73,101.6,502" />
-        <TextBox x:Name="L2" Style="{StaticResource HorzBox}" Margin="382,51,177.6,524" />
-        <TextBox x:Name="R1" Style="{StaticResource HorzBox}" Margin="306,73,253.6,502" />
+        <TextBox x:Name="H1" Style="{StaticResource VerticalBox}" Margin="58,225,501.6,350" Text="150" />
+        <TextBox x:Name="D1" Style="{StaticResource VerticalBox}" Margin="539,150,20.6,425" Text="50" />
+        <TextBox x:Name="D2" Style="{StaticResource VerticalBox}" Margin="422,150,137.6,425" Text="40" />
+        <TextBox x:Name="T1" Style="{StaticResource VerticalBox}" Margin="540,377,19.6,198" Text="8" />
+        <TextBox x:Name="X2" Style="{StaticResource VerticalBox}" Margin="303,538,256.6,37" Text="25" />
+        <TextBox x:Name="X1" Style="{StaticResource HorzBox}" Margin="180,565,379.6,10" Text="25" />
+        <TextBox x:Name="R2" Style="{StaticResource HorzBox}" Margin="94,565,465.6,10" Text="20" />
+        <TextBox x:Name="D3" Style="{StaticResource HorzBox}" Margin="139,492,420.6,83" Text="15" />
+        <TextBox x:Name="W" Style="{StaticResource HorzBox}" Margin="165,371,394.6,204" Text="125" />
+        <TextBox x:Name="L1" Style="{StaticResource HorzBox}" Margin="458,371,101.6,204" Text="100" />
+        <TextBox x:Name="R3" Style="{StaticResource HorzBox}" Margin="486,260,73.6,315" Text="10" />
+        <TextBox x:Name="X3" Style="{StaticResource HorzBox}" Margin="458,73,101.6,502" Text="20" />
+        <TextBox x:Name="L2" Style="{StaticResource HorzBox}" Margin="382,51,177.6,524" Text="50" />
+        <TextBox x:Name="R1" Style="{StaticResource HorzBox}" Margin="306,73,253.6,502" Text="15" />
         <!--#endregion-->
         
     </Grid>

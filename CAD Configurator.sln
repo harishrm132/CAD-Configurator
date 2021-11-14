@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAD Configurator", "CAD Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidworksCore", "SolidworksCore\SolidworksCore.csproj", "{AD5A9188-6630-49C4-8D56-1101AA825F5A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnglePipeCAD", "AnglePipeCAD\AnglePipeCAD.csproj", "{33ED0840-ED9D-49B6-AD15-D594B6C8AF39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AD5A9188-6630-49C4-8D56-1101AA825F5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD5A9188-6630-49C4-8D56-1101AA825F5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD5A9188-6630-49C4-8D56-1101AA825F5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33ED0840-ED9D-49B6-AD15-D594B6C8AF39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33ED0840-ED9D-49B6-AD15-D594B6C8AF39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33ED0840-ED9D-49B6-AD15-D594B6C8AF39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33ED0840-ED9D-49B6-AD15-D594B6C8AF39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
