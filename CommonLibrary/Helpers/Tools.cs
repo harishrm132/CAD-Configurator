@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace AnglePipeCAD.Helpers
+namespace CommonLibrary.Helpers
 {
-    public class Tools
+    public static class Tools
     {
         public static void OpenFolder(string folderPath)
         {

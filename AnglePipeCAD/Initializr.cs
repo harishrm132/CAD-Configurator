@@ -1,4 +1,5 @@
 ﻿using AnglePipeCAD.Models;
+using CommonLibrary.Supports;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,9 @@ namespace AnglePipeCAD
                     anglePipeAssy.CreateSldWorks();
                     break;
                 case CADTools.CATIA:
+                    angle.CreateCatia();
+                    pipe.CreateCatia();
+                    anglePipeAssy.CreateCatia();
                     break;
                 case CADTools.SiemensNX:
                     break;

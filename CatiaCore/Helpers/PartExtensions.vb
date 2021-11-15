@@ -9,7 +9,7 @@ Imports SPATypeLib
 Module PartExtensions
 
     <Extension>
-    Public Function GetNearestFaceReferenceByPoint(wpart As Part, x As Double, y As Double, z As Double) As Face
+    Friend Function GetNearestFaceReferenceByPoint(wpart As Part, x As Double, y As Double, z As Double) As Face
         'CATIA.HSOSynchronized = False
         'CATIA.RefreshDisplay = False
         Dim CATIA As Application = CatiaSingleton.GetApplication()
@@ -51,7 +51,7 @@ Module PartExtensions
     End Function
 
     <Extension>
-    Public Function GetNearestEdgeReferenceByPoint(wpart As Part, x As Double, y As Double, z As Double) As Reference
+    Friend Function GetNearestEdgeReferenceByPoint(wpart As Part, x As Double, y As Double, z As Double) As Reference
         'CATIA.HSOSynchronized = False
         'CATIA.RefreshDisplay = False
         Dim CATIA As Application = CatiaSingleton.GetApplication()
@@ -93,7 +93,7 @@ Module PartExtensions
     End Function
 
     <Extension>
-    Public Function GetFaceFaceEdgeSelections(document As Document, faceSelection1 As Face, faceSelection2 As Face) As Reference
+    Friend Function GetFaceFaceEdgeSelections(document As Document, faceSelection1 As Face, faceSelection2 As Face) As Reference
         Dim searchStr1 As String = faceSelection1.DisplayName
         searchStr1 = Mid(searchStr1, InStr(searchStr1, "Brp:"))
         searchStr1 = Left(searchStr1, InStr(searchStr1, "Cf11:()") + 6)
@@ -124,7 +124,7 @@ Module PartExtensions
     End Function
 
     <Extension>
-    Public Function AddHybridFaceByPoints(wpart As Part, bodyName As String, constName As String, point1 As CaPoint3D, point2 As CaPoint3D, point3 As CaPoint3D)
+    Friend Function AddHybridFaceByPoints(wpart As Part, bodyName As String, constName As String, point1 As CaPoint3D, point2 As CaPoint3D, point3 As CaPoint3D)
         Dim CATIA As Application = CatiaSingleton.GetApplication()
         Dim shpFac As ShapeFactory = wpart.ShapeFactory
         Dim hypFact As HybridShapeFactory = wpart.HybridShapeFactory

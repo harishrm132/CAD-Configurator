@@ -6,7 +6,7 @@ Imports PARTITF
 Public Module PartHelpers
 
     <Extension>
-    Public Sub SimpleFillet(oPart As Part, constRadius As Double, ParamArray points() As CaPoint3D)
+    Friend Sub SimpleFillet(oPart As Part, constRadius As Double, ParamArray points() As CaPoint3D)
 
         Dim references As List(Of Reference) = New List(Of Reference)()
         For Each point As CaPoint3D In points

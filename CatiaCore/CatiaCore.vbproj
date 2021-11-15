@@ -68,7 +68,8 @@
     <Compile Include="Helpers\DocumentManager.vb" />
     <Compile Include="Helpers\PartExtensions.vb" />
     <Compile Include="Helpers\PartHelpers.vb" />
-    <Compile Include="Initialization.vb" />
+    <Compile Include="Initializr_AnglePipe.vb" />
+    <Compile Include="Initializr_AssemblyTree.vb" />
     <Compile Include="Model\CaPoint3D.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -85,7 +86,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Structs.vb" />
+    <Compile Include="Supports\Structs.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -216,6 +217,11 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj">
+      <Project>{6bf7a8ae-e58c-48c1-bacd-0b1f729b152c}</Project>
+      <Name>CommonLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

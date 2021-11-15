@@ -1,17 +1,9 @@
-﻿Imports HybridShapeTypeLib
-Imports KnowledgewareTypeLib
-Imports NavigatorTypeLib
-Imports ProductStructureTypeLib
-Imports SURFACEMACHINING
-Imports PROCESSITF
-Imports GenKwe
-Imports INFITF
+﻿Imports INFITF
 Imports MECMOD
 Imports PARTITF
-Imports SPATypeLib
+Imports ProductStructureTypeLib
 
-Public Class Initialization
-
+Public Class Initializr_AnglePipe
     Public Shared Sub CreateAngle(XLength As Double, YLength As Double, width As Double, thickness As Double,
                                   pipeHoleRad As Double, X1 As Double, X2 As Double, boltHolesRad As Double,
                                   R1 As Double, R2 As Double, targetFolder As String, fileName As String)
@@ -154,71 +146,5 @@ Public Class Initialization
         oProductDoc.SaveDoc(targetFolder, assyName, Doctype.Product)
 
     End Sub
-
-    Public Shared Sub GetAssemTree()
-
-        Dim CATIA As Application = CatiaSingleton.GetApplication()
-
-        'oProductDoc.Product.ExtractBOM(CatFileType.catFileTypeHTML, "D:\Works\CAD\Solidworks\4 - AnglePipe\Assy.txt")
-        Dim oProductDoc As ProductDocument = CATIA.ActiveDocument
-        GetNextNode(oProductDoc.Product, 1, False)
-
-    End Sub
-
-    Shared Comps As List(Of CompTree) = New List(Of CompTree)()
-
-    Shared Sub GetNextNode(oCurrentProduct As Product, SubLevel As Integer, IsSub As Boolean)
-
-        Dim oCurrentTreeNode As Product
-        Dim Level As Integer = 1
-        Dim i As Integer
-
-        ' Loop through every tree node for the current product
-        For i = 1 To oCurrentProduct.Products.Count
-            Dim Comp As CompTree = New CompTree()
-            oCurrentTreeNode = oCurrentProduct.Products.Item(i)
-
-            ' Determine if the current node is a part, product or component
-            If IsPart(oCurrentTreeNode) = True Then
-                Comp.ItemType = "Part"
-            ElseIf IsProduct(oCurrentTreeNode) = True Then
-                Comp.ItemType = "Product"
-            Else
-                Comp.ItemType = "Component"
-            End If
-
-            If IsSub Then
-                Comp.ItemLevel = SubLevel
-            Else
-                Comp.ItemLevel = Level
-            End If
-
-            Comp.ItemName = oCurrentTreeNode.PartNumber
-            Comp.Quantity = 1
-            If Comps.Any(Function(x) x.ItemName = Comp.ItemName) Then
-                Comps.Find(Function(x) x.ItemName = Comp.ItemName).Quantity += 1
-            Else
-                Comps.Add(Comp)
-            End If
-
-
-            ' if sub-nodes exist below the current tree node, call the sub recursively
-            If oCurrentTreeNode.Products.Count > 0 Then
-                SubLevel = SubLevel + 1
-                GetNextNode(oCurrentTreeNode, SubLevel, True)
-            End If
-
-        Next
-
-    End Sub
-
-End Class
-
-Public Class CompTree
-
-    Public Property ItemName As String
-    Public Property ItemType As String
-    Public Property ItemLevel As String
-    Public Property Quantity As Double
 
 End Class

@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidworksCore", "Solidwork
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnglePipeCAD", "AnglePipeCAD\AnglePipeCAD.csproj", "{33ED0840-ED9D-49B6-AD15-D594B6C8AF39}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CatiaCore", "CatiaCore\CatiaCore.vbproj", "{CB28D293-BD5D-479E-BC67-50E519DA938B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLibrary", "CommonLibrary\CommonLibrary.csproj", "{6BF7A8AE-E58C-48C1-BACD-0B1F729B152C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{33ED0840-ED9D-49B6-AD15-D594B6C8AF39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33ED0840-ED9D-49B6-AD15-D594B6C8AF39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33ED0840-ED9D-49B6-AD15-D594B6C8AF39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB28D293-BD5D-479E-BC67-50E519DA938B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB28D293-BD5D-479E-BC67-50E519DA938B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB28D293-BD5D-479E-BC67-50E519DA938B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB28D293-BD5D-479E-BC67-50E519DA938B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BF7A8AE-E58C-48C1-BACD-0B1F729B152C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BF7A8AE-E58C-48C1-BACD-0B1F729B152C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BF7A8AE-E58C-48C1-BACD-0B1F729B152C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BF7A8AE-E58C-48C1-BACD-0B1F729B152C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

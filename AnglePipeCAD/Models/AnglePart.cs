@@ -1,4 +1,6 @@
 ﻿using AnglePipeCAD.Helpers;
+using CatiaCore;
+using CommonLibrary.Helpers;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
 using SolidworksCore;
@@ -139,7 +141,7 @@ namespace AnglePipeCAD.Models
 
         public override void CreateCatia()
         {
-            throw new NotImplementedException();
+            Initializr_AnglePipe.CreateAngle(XLength, YLength, Width, Thickness, PipeHoleRad, X1, X2, BoltHoleRad, Rad1, Rad2, TargetFolder, FileName);
         }
     }
 }

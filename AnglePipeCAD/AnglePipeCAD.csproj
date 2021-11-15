@@ -31,7 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PresentationFramework" />
     <Reference Include="SolidWorks.Interop.sldworks">
       <HintPath>C:\Program Files\SOLIDWORKS Corp\SOLIDWORKS\SolidWorks.Interop.sldworks.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -50,20 +49,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Helpers\AssemblyHelpers.cs" />
     <Compile Include="Helpers\Rules.cs" />
-    <Compile Include="Helpers\Tools.cs" />
-    <Compile Include="Helpers\UnitConverter.cs" />
     <Compile Include="Initializr.cs" />
     <Compile Include="Models\AnglePart.cs" />
     <Compile Include="Models\AnglePipeAssy.cs" />
     <Compile Include="Models\Base.cs" />
     <Compile Include="Models\PipePart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Structs.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CatiaCore\CatiaCore.vbproj">
+      <Project>{CB28D293-BD5D-479E-BC67-50E519DA938B}</Project>
+      <Name>CatiaCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj">
+      <Project>{6BF7A8AE-E58C-48C1-BACD-0B1F729B152C}</Project>
+      <Name>CommonLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SolidworksCore\SolidworksCore.csproj">
       <Project>{ad5a9188-6630-49c4-8d56-1101aa825f5a}</Project>
       <Name>SolidworksCore</Name>

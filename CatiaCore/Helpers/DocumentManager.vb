@@ -7,7 +7,7 @@ Imports ProductStructureTypeLib
 Public Module DocumentManager
 
     <Extension>
-    Sub SaveDoc(document As Document, targetFolder As String, name As String, docType As Doctype)
+    Friend Sub SaveDoc(document As Document, targetFolder As String, name As String, docType As Doctype)
         If Directory.Exists(targetFolder) = False Then
             Directory.CreateDirectory(targetFolder)
         End If
@@ -21,7 +21,7 @@ Public Module DocumentManager
         CATIA.DisplayFileAlerts = bSaveDFA
     End Sub
 
-    Public Function GetFileExtn(docType As Doctype) As String
+    Friend Function GetFileExtn(docType As Doctype) As String
         Dim extn As String = ""
         Select Case docType
             Case Doctype.Part
@@ -36,7 +36,7 @@ Public Module DocumentManager
         Return extn
     End Function
 
-    Function IsPart(objCurrentProduct As Product) As Boolean
+    Friend Function IsPart(objCurrentProduct As Product) As Boolean
         Dim CATIA As Application = CatiaSingleton.GetApplication()
         Dim oTestPart As PartDocument = Nothing
         On Error Resume Next
@@ -49,7 +49,7 @@ Public Module DocumentManager
         End If
     End Function
 
-    Function IsProduct(objCurrentProduct As Product) As Boolean
+    Friend Function IsProduct(objCurrentProduct As Product) As Boolean
         Dim CATIA As Application = CatiaSingleton.GetApplication()
         Dim oTestProduct As ProductDocument = Nothing
         On Error Resume Next
@@ -64,7 +64,7 @@ Public Module DocumentManager
 
 End Module
 
-Public Enum Doctype
+Friend Enum Doctype
     Part
     Product
     Drawing

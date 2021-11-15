@@ -1,18 +1,14 @@
-﻿Public Class CaPoint3D
+﻿Friend Structure CaPoint3D
 
-    Public Property X As Double
-    Public Property Y As Double
-    Public Property Z As Double
+    Friend Property X As Double
+    Friend Property Y As Double
+    Friend Property Z As Double
 
-    Public Sub New()
-
-    End Sub
-
-    Public Sub New(coorX As Double, coorY As Double, coorZ As Double)
+    Friend Sub New(coorX As Double, coorY As Double, coorZ As Double)
         X = coorX
         Y = coorY
         Z = coorZ
     End Sub
 
 
-End Class
+End Structure

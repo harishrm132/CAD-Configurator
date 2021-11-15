@@ -1,4 +1,5 @@
 ﻿using AnglePipeCAD.Helpers;
+using CommonLibrary.Helpers;
 using SolidWorks.Interop.sldworks;
 using SolidworksCore.Helpers;
 using System;
@@ -20,7 +21,7 @@ namespace AnglePipeCAD.Models
         {
             Angle = angle;
             Pipe = pipe;
-            MateDistance = mateDistance;
+            MateDistance = mateDistance.ConvUnits();
             TargetFolder = angle.TargetFolder;
             FileName = FileName3D.PipeAngle;
         }
@@ -40,7 +41,7 @@ namespace AnglePipeCAD.Models
 
         public override void CreateCatia()
         {
-            throw new NotImplementedException();
+            CatiaCore.Initializr_AnglePipe.CreateAssm(TargetFolder, Angle.FileName, Pipe.FileName, this.FileName);
         }
 
     }

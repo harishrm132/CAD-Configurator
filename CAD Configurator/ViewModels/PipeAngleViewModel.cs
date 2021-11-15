@@ -1,6 +1,8 @@
 ﻿using AnglePipeCAD;
 using AnglePipeCAD.Models;
 using Caliburn.Micro;
+using CommonLibrary.Helpers;
+using CommonLibrary.Supports;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -217,8 +219,9 @@ namespace CAD_Configurator.ViewModels
         {
             string targetFolder = @"D:\Works\CAD\Solidworks\4 - AnglePipe";
 
-            AnglePart angle = new AnglePart(targetFolder, L1, H1 + H2, W, T1, D3 / 2, (D1 + 1) / 2, R1, R2, X1, X2);
-            PipePart pipe = new PipePart(targetFolder, D2, D1, L2);
+            UnitConverter.SketchUnits = Units.MM_to_M;
+            AnglePart angle = new AnglePart(targetFolder, L1, H1 + H2, W, T1, D3 / 2, (D1 + 0.001) / 2, R1, R2, X1, X2);
+            PipePart pipe = new PipePart(targetFolder, D1, D2, L2);
             AnglePipeAssy anglePipeAssy = new AnglePipeAssy(angle, pipe, X3);
 
             Initializr.CreateAnglePipe(angle, pipe, anglePipeAssy, CADTools.Solidworks);
