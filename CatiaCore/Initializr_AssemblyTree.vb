@@ -7,18 +7,19 @@ Public Class Initializr_AssemblyTree
     Public Sub New()
 
         Dim CATIA As Application = CatiaSingleton.GetApplication()
-        oProductDoc = CATIA.ActiveDocument
+        Dim oProductDoc As ProductDocument = CATIA.ActiveDocument
 
         CompList = New List(Of CompTree)()
         GetNextNode(oProductDoc.Product, 1, False)
-
+        ExportFileName = oProductDoc.Name
     End Sub
 
     Property CompList As List(Of CompTree)
-    Dim oProductDoc As ProductDocument
+    Property ExportFileName As String
+
 
     Public Sub Export()
-        CompList.ExportCsv(oProductDoc.Name)
+        CompList.ExportCsv(ExportFileName)
     End Sub
 
     Private Sub GetNextNode(oCurrentProduct As Product, SubLevel As Integer, IsSub As Boolean)
@@ -73,8 +74,8 @@ Public Class CompTree
 
     Public Property ItemName As String
     Public Property ItemType As String
-    Public Property ItemLevel As String
-    Public Property Quantity As Double
+    Public Property ItemLevel As Long
+    Public Property Quantity As Integer
 
 End Class
 

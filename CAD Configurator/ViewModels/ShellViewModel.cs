@@ -15,9 +15,14 @@ namespace CAD_Configurator.ViewModels
 
         }
 
-        public void ShowTools()
+        public void ShowAnglePipe()
         {
             ActivateItem(new PipeAngleViewModel());
+        }
+
+        public void ShowAssemblyTree()
+        {
+            ActivateItem(new AssemblyTreeViewModel());
         }
     }
 }

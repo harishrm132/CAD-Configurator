@@ -67,8 +67,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\AssemblyTreeViewModel.cs" />
     <Compile Include="ViewModels\PipeAngleViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="Views\AssemblyTreeView.xaml.cs">
+      <DependentUpon>AssemblyTreeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PipeAngleView.xaml.cs">
       <DependentUpon>PipeAngleView.xaml</DependentUpon>
     </Compile>
@@ -98,6 +102,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Texts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AssemblyTreeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,6 +155,14 @@
     <ProjectReference Include="..\AnglePipeCAD\AnglePipeCAD.csproj">
       <Project>{33ed0840-ed9d-49b6-ad15-d594b6c8af39}</Project>
       <Name>AnglePipeCAD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AssemblyTreeCAD\AssemblyTreeCAD.csproj">
+      <Project>{6F1E23EA-FA68-45F1-8879-B744C0576E89}</Project>
+      <Name>AssemblyTreeCAD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CatiaCore\CatiaCore.vbproj">
+      <Project>{CB28D293-BD5D-479E-BC67-50E519DA938B}</Project>
+      <Name>CatiaCore</Name>
     </ProjectReference>
     <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj">
       <Project>{6BF7A8AE-E58C-48C1-BACD-0B1F729B152C}</Project>

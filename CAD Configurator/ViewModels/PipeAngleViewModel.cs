@@ -31,7 +31,7 @@ namespace CAD_Configurator.ViewModels
 
         #endregion
 
-        #region PublicProperties
+        #region Public Properties
         public double H1
         {
             get { return _h1; }
@@ -201,7 +201,10 @@ namespace CAD_Configurator.ViewModels
 
         #endregion
 
+        #region Derived Properties
         public double H2 { get { return D1; } }
+
+        #endregion
 
         public bool CanCreate3DModel
         {
