@@ -45,21 +45,7 @@ namespace SolidworksCore.Helpers
                 Directory.CreateDirectory(targetFolder);
             }
 
-            string extn = "";
-            switch (docType)
-            {
-                case sw_DocType.Part:
-                    extn = ".SLDPRT";
-                    break;
-                case sw_DocType.Assembly:
-                    extn = ".SLDASM";
-                    break;
-                case sw_DocType.Drawing:
-                    extn = ".SLDDRW";
-                    break;
-                default:
-                    break;
-            }
+            string extn = docType.GetSwExtension();
 
             ModelDoc2 swModel = (ModelDoc2)swApp.ActiveDoc;
             swModel.SaveAs3($"{targetFolder}\\{fileName}{extn}",
@@ -68,6 +54,33 @@ namespace SolidworksCore.Helpers
             swApp.CloseDoc($"{fileName}{extn}");
         }
 
+        public static swDocumentTypes_e GetSwDocType(string filePath)
+        {
+            string extension = Path.GetExtension(filePath).ToUpper();
+            if (extension.Contains(SwFileExtension.Part))
+                return swDocumentTypes_e.swDocPART;
+            else if (extension.Contains(SwFileExtension.Assembly))
+                return swDocumentTypes_e.swDocASSEMBLY;
+            else if (extension.Contains(SwFileExtension.Drawing))
+                return swDocumentTypes_e.swDocDRAWING;
+
+            return swDocumentTypes_e.swDocNONE;
+        }
+
+        public static string GetSwExtension(this sw_DocType docType)
+        {
+            switch (docType)
+            {
+                case sw_DocType.Part:
+                    return SwFileExtension.Part;
+                case sw_DocType.Assembly:
+                    return SwFileExtension.Assembly;
+                case sw_DocType.Drawing:
+                    return SwFileExtension.Drawing;
+                default:
+                    return string.Empty;
+            }
+        }
     }
 
     public enum sw_DocType

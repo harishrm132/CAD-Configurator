@@ -7,6 +7,13 @@
         public const string Right = "Right";
     }
 
+    public struct SwFileExtension
+    {
+        public const string Part = "SLDPRT";
+        public const string Assembly = "SLDASM";
+        public const string Drawing = "SLDDRW";
+    }
+
     public struct FeatureType
     {
         public const string Plane = "PLANE";

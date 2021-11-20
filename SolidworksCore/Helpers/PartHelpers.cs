@@ -37,5 +37,57 @@ namespace SolidworksCore.Helpers
                 (int)swFeatureFilletOptions_e.swFeatureFilletUniformRadius,
                 uniformRad, 0, 0, 0, 0, 0, null, null, null, null, null, null, null);
         }
+
+        public static bool IsConfigurationExist(this ModelDoc2 swModel, string configurationName)
+        {
+            if (configurationName == null) throw new ArgumentNullException("configurationName");
+
+            if (swModel.GetConfigurationCount() > 0)
+            {
+                var configurations = (object[])swModel.GetConfigurationNames();
+                for (int i = 0; i < configurations.Length; i++)
+                {
+                    if (configurations[i].ToString().ToLower().Trim() == configurationName.ToLower().Trim()) return true;
+                }
+            }
+
+            return false;
+        }
+
+        public static T Get<T>(this ModelDoc2 swModel, string customPropName, out string value, string configuration = "Default")
+        {
+            if (swModel == null)
+                throw new ArgumentNullException(nameof(swModel));
+
+            string resolvedvalue = string.Empty;
+
+            swModel.Extension.CustomPropertyManager[configuration].Get2(customPropName, out value, out resolvedvalue);
+
+            T ret = default(T);
+
+            try
+            {
+                if (typeof(T) == typeof(double))
+                {
+                    double v;
+                    var parse = double.TryParse(resolvedvalue, out v);
+                    return (T)Convert.ChangeType(v, typeof(T));
+                }
+                else if (typeof(T) == typeof(string))
+                {
+                    return (T)Convert.ChangeType(resolvedvalue, typeof(T));
+                }
+                else if (typeof(T) == typeof(bool))
+                {
+                    Boolean boo;
+                    var parse = bool.TryParse(resolvedvalue, out boo);
+                    return (T)Convert.ChangeType(boo, typeof(T));
+                }
+            }
+            catch (Exception) { }
+
+            return ret;
+        }
+
     }
 }
